@@ -1,0 +1,61 @@
+.services {
+  text-align: center;
+
+  @include breakpoint-up(medium) {
+   text-align: left;
+  }
+
+  &__intro {
+    color: $secondary;
+    margin-bottom: 22px;
+
+    @include breakpoint-up(medium) {
+      width: 70%;
+    }
+    @include breakpoint-up(large) {
+      width: 50%;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: $font-md;
+      color: $grayishBlue;
+    }
+  }
+
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  
+  &__item {
+    padding: 20px;
+    color: $grayishBlue;
+
+    @include breakpoint-up(medium){
+      /* crece, disminuye, tamaño base  */
+      flex: 0 0 50%;
+    }
+    
+    @include breakpoint-up(large){
+      /* crecen por igual  */
+      flex: 1;
+    }
+
+    .item__icon i{
+      color: $grayishBlue;
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    .item__title {
+      margin-bottom: 5px;
+      font-size: $font-lg;
+      font-weight: 500;
+    }
+    .item__description {
+      font-size: $font-md;
+    }
+  }
+}

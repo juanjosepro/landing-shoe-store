@@ -1,0 +1,142 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  font-size: $font-md;
+  font-weight: 300;
+  font-family: 'Public Sans', sans-serif;
+
+  &::-webkit-scrollbar{
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: $secondary;
+    border-radius: 7px;
+    border-right: 1px solid $white;
+    border-left: 1px solid $white;
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 24px;
+  margin-bottom: 2.25rem;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  
+  &--pall {
+    padding-top: 70px;
+    padding-right: 24px;
+    padding-bottom: 70px;
+    padding-left: 24px;
+    
+    @include breakpoint-up(large) {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+  }
+  &--py {
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    @include breakpoint-up(large) {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+  }
+  &--px {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  &--pt {
+    padding-top: 70px;
+
+    @include breakpoint-up(large) {
+      padding-top: 96px;
+    }
+  }
+  &--pr {
+    padding-right: 24px;
+  }
+  &--pb {
+    padding-bottom: 70px;
+
+    @include breakpoint-up(large) {
+      padding-bottom: 96px;
+    }
+  }
+  &--pl {
+    padding-left: 24px;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+.button {
+  background: $white;
+  border: 1px solid $secondary;
+  color: $secondary;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 25px;
+  border-radius: 10px;
+  width: 309px;
+  transition: all 300ms ease-in-out;
+  
+  &:hover {
+    color: #383636;
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

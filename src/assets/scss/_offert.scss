@@ -1,0 +1,64 @@
+.offert {
+  background: $primary;
+  margin-top: 50px;
+  transform: skew(0deg, -10deg);
+  
+  @include breakpoint-up(large) {
+    margin-top: 80px;
+  }
+
+  &__content {
+    transform: skew(0deg, 10deg);
+    text-align: center;
+    color: $white;
+  }
+
+  &__time {
+    display: flex;
+    justify-content: center;
+
+    .offert__item {
+      background: $secondary;
+      width: 75px;
+      height: 75px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-weight: 500;
+
+      @include breakpoint-up(large) {
+        width: 83px;
+        height: 83px;
+      }
+      
+      span {
+        margin-top: 5px;
+        font-size: $font-sm;
+        font-weight: 500;
+        
+        @include breakpoint-up(large) {
+          font-size: $font-md
+        }
+      }
+    }
+  }
+  &__alert {
+    margin-top: 30px;
+
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+
+      @include breakpoint-up(large) {
+        font-size: 40px;
+      }
+    }
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+  }
+} 

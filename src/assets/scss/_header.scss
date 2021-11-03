@@ -1,0 +1,140 @@
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+
+  /* btn hamburger */
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__toggle {
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: $white;
+      transition: all 300ms ease-in-out;
+      transform-origin: 6px 1px;
+
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+/* **************** end btn hambuger ************** */
+
+
+/* menu desktop */
+  nav {
+    position: relative;
+    padding: 5px 10px;
+    
+    @include breakpoint-up(large) {
+      padding: 5px 2px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    border: 2px solid $white;
+    border-radius: 5px;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    div {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+    
+    div span{
+      font-weight: 900;
+      padding: 0 5px;
+      color: $white;
+    }
+  }
+
+  &__links {
+
+    a {
+      position: relative;
+      font-size: $font-sm;
+      color: $white;
+      margin: 0 25px;
+
+      &::before {
+        content: "";
+        height: 5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        background: $white;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  /* ******************** end menu desktop ******************* */
+
+  /* menu mobile */
+  &__menu {
+    position: absolute;
+    width: calc(100% - 48px);
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 24px;
+    border-radius: 4px;
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 15px;
+      color: $white;
+    }
+  }
+
+  /* ****************** end menu mobile ******************* */
+
+  /* menu mobile overlay */
+
+  .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient($darkBlue, transparent);
+
+    &.fade-in {
+      display: block;
+    }
+
+    &.fade-out {
+      display: none;
+    }
+  }
+
+  /* **************************** end menu overlay ************************** */
+
+}
